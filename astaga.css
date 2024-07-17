@@ -642,7 +642,7 @@ section {
 <!--footer-->
 
 .footer{
-    background: var(--yellow);
+    background: var(--light-yellow);
 }
 
 .footer .box-container{
