@@ -16,6 +16,23 @@ document.querySelector('#close-login-form').onclick = () => {
     document.querySelector('.login-form-container').classList.remove('active');
 };
 
+//form book now
+document.addEventListener('DOMContentLoaded', function() {
+    const bookNowButtons = document.querySelectorAll('.book-now');
+
+    bookNowButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const carType = this.closest('.swiper-slide').getAttribute('data-car-type');
+            localStorage.setItem('selectedCarType', carType);
+            window.location.href = 'booknow.html';
+        });
+    });
+});
+
+
+
+
 // Header scroll effect
 window.onscroll = () => {
     if (window.scrollY > 0) {
@@ -133,3 +150,7 @@ var swiper = new Swiper(".reviews-slider", {
         },
     },
 });
+
+
+
+
