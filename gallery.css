@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/*======= css variabel =======*/
+
+:root {
+    --white-color: #fff;
+    --dark-color: #222;
+    --body-bg-color: #fff;
+    --section-body-color: #202834;
+    --navigation-item-hover-color: #3b5378;
+
+    --text-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 5px 25px rgb(0 0 0 /20%);
+
+    --scroll-bar-color:#fff;
+    --scroll-thumb-color:#282f4e;
+    --scroll-thumb-hover-color:#454f6b;
+}
+
+
+/*======= scroll bar =======*/
+
+/*======= main css =======*/
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+    background: var(--body-bg-color);
+}
+
+/*======= header =======*/
+
+header {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: calc(5rem+ 1rem);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+header .nav-bar{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 200px;
+    transition: 0.3s ease;
+
+}
+.nav-close-btn {
+    display: none;
+}
+.nav-bar .logo {
+    color: var(--white-color);
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform:initial;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+}
+
+.navigation .nav-items a {
+    color: var(--white-color);
+    font-size: 1em;
+    text-decoration: none;
+    text-shadow: var(--box-shadow);
+}
+
+.navigation .nav-items a i{
+    display: none;
+}
+
+.navigation .nav-items a:not(:last-child){
+     margin-right: 45px;
+}
+
+/*======= home =======*/
+
+.home{
+    min-height: 100vh;
+}
+
+/*======= background slider =======*/
+
+.bg-slider{
+    z-index: 777;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.bg-slider .swiper-slide{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.bg-slider .swiper-slide img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+
+}
+
+.swiper-slide .text-content{
+    position: absolute;
+    top: 25%;
+    color: var(--white-color);
+    margin: 0 200px;
+    transition: 0.3s ease;
+}
+.swiper-slide .text-content .title{
+    font-size: 4em;
+    font-weight: 700;
+    text-shadow: var(--text-shadow);
+    margin-bottom: 20px;
+    transform:translateY(-50px) ;
+    opacity: 0;
+}
+.swiper-slide-active .text-content .title{
+    transform:translateY(0) ;
+    opacity: 1;
+    transition: 1s ease;
+    transition-delay: 0.3s ;
+    transition-property: transform, opacity;
+}
+
+.swiper-slide .text-content .title span{
+    font-size: 0.3em;
+    font-weight: 300;
+}
+.swiper-slide .text-content p{
+    max-width: 700px;
+    background: rgba(255 255 255 0.1);
+    backdrop-filter: blur(10px);
+    text-shadow:var(--text-shadow) ;
+    padding: 20px;
+    border-radius: 10ox;
+    border-bottom: 1px solid rgba(255 255 255 0.1);
+    border-right: 1px solid rgba(255 255 255 0.1);
+    box-shadow: var(--box-shadow);
+    transform: translateX(-80px);
+    opacity: 0;
+}
+.swiper-slide-active .text-content p{
+    transform: translateX(0);
+    opacity: 1;
+    transition: 1s ease;
+    transition-delay: 0.3s;
+    transition-property: transform, opacity;
+}
+.swiper-slide .text-content .read-btn{
+    border: none;
+    outline: none;
+    background: var(--white-color);
+    color: var(--dark-color);
+    font-size: 1em;
+    font-weight: 500;
+    padding: 8px 25px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: translateX(50px);
+    opacity: 0;
+}
+
+
+
+.swiper-slide-active .text-content .read-btn{
+    transform:translateX(0) ;
+    opacity: 1;
+    transition: 1s ease;
+    transition-delay: 0.3s ;
+    transition-property: transform, opacity;
+
+}
+.swiper-slide .text-content .read-btn i{
+    font-size: 1.6em;
+    transition: 0.3s ease;
+}
+.swiper-slide .text-content .read-btn:hover i{
+    transform: translateX(5px);
+}
+.bg-slider-thumbs{
+    z-index: 777;
+    position: absolute;
+    bottom: 7em;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3 ease;
+}
+.thumbs-container{
+    background:rgba(255 255 255 0.1) ;
+    backdrop-filter:blur(10px) ;
+    padding: 10px 3px;
+    border-radius: 10px;
+    border-bottom: 1px solid rgba(255 255 255 0.1);
+    border-right: 1px solid rgba(255 255 255 0.1);
+    box-shadow: var(--box-shadow);
+}
+
+.thumbs-container img{
+    width: 50px;
+    height: 35px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.swiper-slide-thumb-active{
+    border:1px solid var(--white-color);
+
+}
+/*======= media icont =======*/
+/*======= about section =======*/
+/*======= medis queries =======*/
+@media screen and (max-width: 1100px){
+
+}
+    
+
+
+    
+
+
