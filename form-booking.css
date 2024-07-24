@@ -46,7 +46,7 @@ body {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #fff701;
+    border-color: #222;
     outline: none;
 }
 
@@ -55,12 +55,12 @@ body {
     padding: 1em;
     border: none;
     border-radius: 5px;
-    background: #fff701;
-    color: #000000;
+    background: #666;
+    color: #ffffff;
     font-size: 1.2em;
     cursor: pointer;
 }
 
 .submit-button:hover {
-    background: #f9ff46;
+    background: #535261;
 }
